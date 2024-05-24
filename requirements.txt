@@ -1,4 +1,7 @@
+nltk
+scikit-learn
+wordcloud
+matplotlib
 pandas
-numpy
-seaborn
+networkx
 -e .
