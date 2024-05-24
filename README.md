@@ -1,12 +1,31 @@
 # Sentiment Analysis of Android App Reviews
 
+## Table of Contents
+- [1.0 Project Overview](#10-project-overview)
+- [2.0 Problem Statement](#20-problem-statement)
+- [3.0 Objectives](#30-objectives)
+- [4.0 Dataset](#40-dataset)
+- [5.0 Methodology](#50-methodology)
+  - [5.1 Importing necessary Libraries](#51-importing-necessary-libraries)
+  - [5.2 Defining Function to Load the Training and Test Dataset](#52-defining-function-to-load-the-training-and-test-dataset)
+  - [5.3 Data Preprocessing](#53-data-preprocessing)
+  - [5.4 Model Training and Evaluation](#54-model-training-and-evaluation)
+  - [5.5 Sentiment Analysis of AAD Companies](#55-sentiment-analysis-of-aad-companies)
+  - [5.6 Identification of the most successful AAD Commpany](#56-identification-of-the-most-successful-aad-company)
+- [6.0 Results](#60-results)
+- [7.0 Conclusion](#70-conclusion)
+- [8.0 Future Work](#80-future-work)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+
+
 ## 1.0 Project Overview
 
 Sentiment analysis has emerged as a powerful tool for understanding user opinions and emotions expressed in textual data, particularly in the context of mobile application reviews. With the exponential growth of the Android application market, competition among Android Application Development (AAD) companies has intensified. This project aims to leverage sentiment analysis techniques to evaluate user satisfaction and identify the most successful AAD company based on customer feedback.
 
 ## 2.0 Problem Statement
 
-The main aim of this project is to develop an advanced data analysis (Machine learning) that employs sentiment analysis techniques to automatically analyze the provided dataset of Amazon reviews. The algorithm will identify the sentiment (positive, neutral, or negative) expressed in each review and use this information to determine the most successful AAD company based on customer feedback.
+The main aim of this project is to develop an advanced data analysis system using machine learning techniques that employ sentiment analysis to automatically analyze the provided dataset of Amazon reviews. The algorithm will identify the sentiment (positive, neutral, or negative) expressed in each review and use this information to determine the most successful AAD company based on customer feedback.
 
 ## 3.0 Objectives
 
@@ -18,8 +37,10 @@ The primary objectives of this project are:
 ## 4.0 Dataset
 The dataset used in this project consists of 40,000 user reviews of Android applications developed by three AAD companies. The dataset is divided into two parts:
 
-1.  Training dataset [Download Here](reviews_Apps_for_Android_5.training.txt): Contains 20,000 reviews that will be used for developing and training the sentiment analysis algorithms. 
-2.  Test dataset [Download Here](reviews_Apps_for_Android_5.training.txt): Contains 20,000 reviews that will be used for evaluating the performance of the sentiment analysis algorithms. There is no overlap between the reviews in the training and test datasets. 
+1.  Training dataset: Contains 20,000 reviews that will be used for developing and training the sentiment analysis algorithms.
+2.  Test dataset: Contains 20,000 reviews that will be used for evaluating the performance of the sentiment analysis algorithms. There is no overlap between the reviews in the training and test datasets.
+
+The dataset files can be accessed from the ```Dataset/``` directory in the repository. 
 
 Each review in both the training and test datasets consists of the following components:
 
@@ -35,14 +56,14 @@ AAD_1|B004NWLM8K, B004Q1NH4U, B004LPBTAA
 AAD_2|B004S6NAOU, B004R6HTWU, B004N8KDNY
 AAD_3|B004KA0RBS, B004NPELDA, B004L26XXQ
 
-## 5.0  Methodology
+## 5.0 Methodology
 
 The sentiment analysis system is developed using SVM and KNN algorithms. The project follows these key steps:
 
-#### 5.1 Importing neccessary libraries: 
-The Python libraries used in this project are detailed in the ```requirements.txt```. file and are also displayed in the submitted *_Jupyter notebooks code_* 
+#### 5.1 Importing neccessary libraries 
+The Python libraries used in this project are detailed in the ```requirements.txt```. file and are also displayed in the submitted *_Jupyter notebooks code_*. 
 
-#### 5.2  Defining Function to Load the Training and Test Dataset:
+#### 5.2 Defining Function to Load the Training and Test Dataset
 The defined function, as displayed in the code snippet, assists in loading both the training and test datasets in Jupyter Notebook.
 
 ```
@@ -60,7 +81,7 @@ def load_dataset_from_txt(input_txt_file):
     return reviews, labels, app_ids
 ```
 
-#### 5.3     Data Preprocessing: 
+#### 5.3 Data Preprocessing
 To prepare the dataset for sentiment analysis, a series of preprocessing steps are applied to both the training and testing datasets.
 
 Text Cleaning: 
@@ -104,13 +125,13 @@ Here are all the implemented Preprocessing Pipelines in this project:
 ![Alt text](Result/Pipeline.PNG)
 
 
-#### 5.4  Model Training and Evaluation:
+#### 5.4 Model Training and Evaluation
 The SVM and KNN models are trained using the preprocessed dataset, and their performance is evaluated using metrics such as accuracy, precision, recall, and F1-score.
 
 ![Alt text](Result/Evaluation_Metrics.PNG)
 ---
-#### 5.5  Sentiment Analysis of AAD Companies: 
-Utilizing the superior best-performing model, in this case, the SVM model, user reviews of Android applications developed by three AAD companies are analyzed. Sentiment scores for each company are derived from the proportion of positive, negative, and neutral customer reviews as displayed below.
+#### 5.5 Sentiment Analysis of AAD Companies
+Utilizing the superior best-performing model, in this case, the SVM model, user reviews of Android applications developed by three AAD companies are analyzed. Sentiment scores for each company are derived from the proportion of positive, negative, and neutral customer reviews, as displayed below.
 
 Company | Positive Percentage | Negative Percentage | Neutral Percentage
 |:-----------:|:------------:|:------------:|:---------:|
@@ -119,15 +140,15 @@ AAD_2|74.31%|22.94%|2.75%
 AAD_3|65.48%|32.74%|1.79%
 ---
 
-#### 5.6 Identification of the most successful AAD Commpany: 
+#### 5.6 Identification of the most successful AAD Company
 -   A weighted sentiment score is calculated to identify the most successful AAD company.
 -   Different weights are assigned to each polarity (positive, negative, and neutral) to obtain an overall sentiment measure for each company.  
 -   The company with the highest weighted sentiment score is considered the most successful.
 
-See result below as it showcases the plot of the best AAD Companies:
+See the result below as it showcases the plot of the best AAD companies:
 ![Alt text](Result/Weighted_score.PNG)
 
-##  6.  Results:
+##  6.0 Results:
 
 The SVM model outperformed the KNN model in terms of accuracy, precision, recall, and F1-score, making it the best-performing model for sentiment analysis in this study. The SVM model was then applied to analyze the reviews of Android applications developed by the three AAD companies. AAD_1 emerged as the most successful company, achieving a weighted sentiment score of 96.26, indicating a strong positive sentiment towards its applications.
 
@@ -140,7 +161,7 @@ In contrast, the word cloud for AAD_2 includes terms like "good", "play", "game"
 For AAD_3, the word cloud features terms like "game", "free", "one”, and "play", indicating that gaming and free apps are important factors for users. However, the inclusion of words like "work", "people", and "use" suggests that AAD_3's apps may have a more practical or utilitarian aspect compared to the other companies.
 
 
-## 7. Conclusion
+## 7.0 Conclusion
 This project demonstrates the practical utility of sentiment analysis in assessing company performance and market position in the Android application development industry. The findings highlight the effectiveness of traditional machine learning algorithms like SVM in sentiment classification when labeled data is limited. The project contributes to the literature on sentiment analysis and its applications in the mobile app industry, providing valuable insights for AAD companies to improve user satisfaction and stay competitive in the market.
 
 ## Repository Structure
@@ -151,9 +172,12 @@ This project demonstrates the practical utility of sentiment analysis in assessi
 -   ```README.md```: Provides an overview of the project and instructions for running the code.
 
 ## Getting Started
-1. Clone the Repository:
-2. Install the required dependencies:
+1. Clone the Repository
+2. Install the required dependencies. It is recommended to use a virtual environment:
 ```
+python -m venv venv
+source venv/bin/activate  # For Unix/Linux
+venv\Scripts\activate  # For Windows
 pip install -r requirements.txt
 ```
 3. Run the sentiment analysis pipeline:
@@ -162,18 +186,13 @@ python src/main.py
 ```
 4. Explore the results and visualizations in the ``results/`` directory
 
-## Contributing
-Contributions to this project are welcome. If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
 
-## License
-This project is licensed under the MIT License.
-We would like to thank the Android Application Development companies for providing the dataset used in this project. 
+Now, grab some popcorn and explore the [Full Code](/src/Full%20code.ipynb) &#128522;
 
-## Acknowledgement
-We also acknowledge the contributions of the open-source community in developing the libraries and tools used in this project.
 
-## Contact
-For any questions or inquiries, please contact ayanrinnopeter@mail.com
+![Thank](/Result/Thank_you.jpg)
+
+Thanks for following through.
 
 ---
 
