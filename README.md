@@ -6,7 +6,7 @@
 - [3.0 Objectives](#30-objectives)
 - [4.0 Dataset](#40-dataset)
 - [5.0 Methodology](#50-methodology)
-  - [5.1 Importing necessary Libraries](#51-importing-necessary-libraries)
+  - [5.1 Importing necessary libraries](#51-importing-necessary-libraries)
   - [5.2 Defining Function to Load the Training and Test Dataset](#52-defining-function-to-load-the-training-and-test-dataset)
   - [5.3 Data Preprocessing](#53-data-preprocessing)
   - [5.4 Model Training and Evaluation](#54-model-training-and-evaluation)
@@ -14,7 +14,6 @@
   - [5.6 Identification of the most successful AAD Commpany](#56-identification-of-the-most-successful-aad-company)
 - [6.0 Results](#60-results)
 - [7.0 Conclusion](#70-conclusion)
-- [8.0 Future Work](#80-future-work)
 - [Repository Structure](#repository-structure)
 - [Getting Started](#getting-started)
 
@@ -60,7 +59,7 @@ AAD_3|B004KA0RBS, B004NPELDA, B004L26XXQ
 
 The sentiment analysis system is developed using SVM and KNN algorithms. The project follows these key steps:
 
-#### 5.1 Importing neccessary libraries 
+#### 5.1 Importing necessary libraries 
 The Python libraries used in this project are detailed in the ```requirements.txt```. file and are also displayed in the submitted *_Jupyter notebooks code_*. 
 
 #### 5.2 Defining Function to Load the Training and Test Dataset
@@ -146,13 +145,13 @@ AAD_3|65.48%|32.74%|1.79%
 -   The company with the highest weighted sentiment score is considered the most successful.
 
 See the result below as it showcases the plot of the best AAD companies:
-![Alt text](Result/Weighted_score.PNG)
+![Alt text](Result/Weighted_score.png)
 
 ##  6.0 Results:
 
 The SVM model outperformed the KNN model in terms of accuracy, precision, recall, and F1-score, making it the best-performing model for sentiment analysis in this study. The SVM model was then applied to analyze the reviews of Android applications developed by the three AAD companies. AAD_1 emerged as the most successful company, achieving a weighted sentiment score of 96.26, indicating a strong positive sentiment towards its applications.
 
-![Alt text](Result/Word_cloud.PNG)
+![Alt text](Result/Word_cloud.png)
 
 However, in gaining in-dept insight towards the success of AAD companies, as displayed above AAD_1, the word cloud highlights positive terms such as “love", "great", "fun", “one", "good", "play", and "love", indicating a generally positive sentiment towards their apps. Users seem to enjoy the interactive and entertaining aspects of AAD_1's applications.
 
